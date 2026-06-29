@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>八田実紗希 — Webデザイン ポートフォリオ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=RocknRoll+One&family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; }
+  @keyframes bobble { 0%,100%{ transform:translateY(0) rotate(-2deg);} 50%{ transform:translateY(-8px) rotate(2deg);} }
+  .nav-link:hover { color:#FF6B6B !important; }
+  .work-card { transition: transform .18s ease; display:flex; flex-direction:column; }
+  .work-card > a.pill-btn { margin-top:auto; }
+  .work-card:hover { transform: translate(-2px,-3px); }
+  .pill-btn { transition: transform .14s ease; }
+  .pill-btn:hover { transform: translate(-1px,-2px); }
+  .work-thumb { transition: transform .18s ease; cursor:pointer; }
+  .work-thumb:hover { transform: translateY(-3px); }
+  .work-thumb:hover img { box-shadow:0 0 0 2px #FF6B6B, 4px 6px 0 rgba(43,36,64,.18) !important; }
+
+  @media (max-width: 760px) {
+    .wrap { padding-left:18px !important; padding-right:18px !important; }
+    .hero-h1 { font-size:38px !important; padding-left:0 !important; line-height:1.3 !important; }
+    .hero-wrap { padding-top:48px !important; padding-bottom:34px !important; }
+    .hero-lead { font-size:15px !important; }
+    .g-works { grid-template-columns:1fr !important; gap:20px !important; }
+    .g-about { grid-template-columns:1fr !important; }
+    .g-skills { grid-template-columns:1fr !important; }
+    .g-thumbs { grid-template-columns:1fr 1fr !important; gap:12px !important; }
+    .about-card { padding:30px 22px !important; }
+    .alpha-box { min-height:0 !important; }
+    .work-desc { min-height:0 !important; }
+    .works-head { flex-wrap:wrap !important; gap:4px 12px !important; }
+    .sec-h2 { font-size:28px !important; }
+    .nav-inner { padding-left:18px !important; padding-right:18px !important; }
+    .nav-links { gap:16px !important; }
+  }
+  @media (max-width: 420px) {
+    .hero-h1 { font-size:32px !important; }
+    .g-thumbs { grid-template-columns:1fr !important; }
+  }
+</style>
+</head>
+<body>
+<div style="min-height:100vh; background-color:#FFF6EF; background-image:radial-gradient(rgba(255,107,107,.13) 2px, transparent 2px); background-size:24px 24px; font-family:'M PLUS Rounded 1c',sans-serif; color:#2B2440;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:sticky; top:0; z-index:50; backdrop-filter:blur(8px); background:rgba(255,246,239,.82); border-bottom:2px solid #2B2440;">
+    <div class="nav-inner" style="max-width:1040px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="font-family:'Dela Gothic One',sans-serif; font-size:18px; color:#2B2440;">八田実紗希<span style="color:#FF6B6B;">.</span></div>
+      <div class="nav-links" style="display:flex; gap:22px; align-items:center;">
+        <a href="#works" class="nav-link" style="font-size:14px; font-weight:800; color:#2B2440; text-decoration:none;">WORKS</a>
+        <a href="#about" class="nav-link" style="font-size:14px; font-weight:800; color:#2B2440; text-decoration:none;">ABOUT</a>
+        <a href="#skills" class="nav-link" style="font-size:14px; font-weight:800; color:#2B2440; text-decoration:none;">SKILLS</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <div class="hero-wrap wrap" style="max-width:920px; margin:0 auto; padding:74px 28px 46px; text-align:center;">
+    <div style="display:inline-flex; align-items:baseline; gap:10px;">
+      <span style="font-family:'Dela Gothic One',sans-serif; font-size:30px; line-height:1; color:#2B2440; text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-2px 0 0 #fff,2px 0 0 #fff,4px 5px 0 rgba(0,0,0,.10);">PORTFOLIO</span>
+      <span style="font-family:'Dela Gothic One',sans-serif; font-size:15px; color:#FF6B6B;">2026</span>
+    </div>
+    <h1 class="hero-h1" style="margin:20px 0 0; padding-left:0.5em; font-family:'RocknRoll One',sans-serif; font-weight:400; font-size:60px; line-height:1.22; color:#FF6B6B; text-shadow:-3px -3px 0 #fff,3px -3px 0 #fff,-3px 3px 0 #fff,3px 3px 0 #fff,0 -3px 0 #fff,0 3px 0 #fff,-3px 0 0 #fff,3px 0 0 #fff,7px 9px 0 rgba(255,107,107,.2);">“好き”が“もっと好き”になる<br>デザインを！</h1>
+    <p class="hero-lead" style="margin:30px auto 0; max-width:680px; font-size:17px; font-weight:700; line-height:1.95; color:#5C5670;">「どうすれば“もっと好き”になってもらえるか」を考えながら、情報を載せるだけでなく<b style="color:#FF6B6B;">体験を届ける</b>VTuber公式サイトを3点つくりました。</p>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:32px; justify-content:center;">
+      <span style="font-size:14px; font-weight:800; color:#fff; background:#FF6B6B; padding:9px 17px; border-radius:999px; border:2px solid #2B2440; box-shadow:2px 2px 0 #2B2440;">企画・ディレクション</span>
+      <span style="font-size:14px; font-weight:800; color:#fff; background:#2B2440; padding:9px 17px; border-radius:999px; border:2px solid #2B2440; box-shadow:2px 2px 0 #FF6B6B;">Webデザイン</span>
+    </div>
+    <div style="margin-top:40px;">
+      <a href="#works" class="pill-btn" style="display:inline-flex; align-items:center; gap:8px; font-family:'Zen Maru Gothic',sans-serif; font-size:15px; font-weight:900; color:#fff; background:#2B2440; padding:13px 30px; border-radius:999px; border:2.5px solid #2B2440; box-shadow:3px 4px 0 #FFC24B; text-decoration:none;">制作したサイトを見る ↓</a>
+    </div>
+  </div>
+
+  <!-- ===== WORKS ===== -->
+  <div id="works" class="wrap" style="max-width:1040px; margin:0 auto; padding:36px 28px 20px;">
+    <div class="works-head" style="display:flex; align-items:baseline; gap:14px; margin-bottom:8px;">
+      <h2 class="sec-h2" style="margin:0; font-family:'Dela Gothic One',sans-serif; font-size:34px; color:#2B2440; text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-2px 0 0 #fff,2px 0 0 #fff,4px 5px 0 rgba(0,0,0,.10);">WORKS</h2>
+      <span style="font-size:15px; font-weight:800; color:#FF6B6B;">この一ヶ月で制作したWebサイト3点</span>
+    </div>
+    <p style="margin:0 0 18px; font-size:14px; font-weight:700; color:#6B6480;">企画・デザイン・体験のアイデアを担当した3サイトです。</p>
+    <div style="display:flex; align-items:flex-start; gap:10px; background:#FFF1D8; border:2px solid #2B2440; border-radius:16px; padding:14px 18px; margin-bottom:30px; box-shadow:3px 3px 0 #FFC24B;">
+      <span style="font-size:18px; line-height:1.3;">✨</span>
+      <p style="margin:0; font-size:13.5px; font-weight:700; line-height:1.7; color:#2B2440;">私の役割は、コードを書くことではなく<b>「何を、なぜ、どう見せるか」を決めること</b>。実装はClaude Design（AI）に任せ、私は<b style="color:#E0552B;">企画・体験設計・デザインという上流に集中</b>しました。AIを“指示通りに動く制作チーム”として使いこなし、自分のアイデアを形にする——それが私のディレクションのやり方です。</p>
+    </div>
+
+    <div class="g-works" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; align-items:start;">
+
+      <!-- W1 四ッ谷やえ -->
+      <div class="work-card" style="background:#fff; border:3px solid #2B2440; border-radius:24px; padding:15px; box-shadow:7px 7px 0 #FF6B6B;">
+        <a href="https://mutunotatami.github.io/yotuyayae_fansite/" target="_blank" rel="noopener" class="work-thumb" style="display:block; border-radius:14px;"><img src="assets/work-yotuyayae.jpg" alt="四ッ谷やえ 公式ファンサイトの画面" style="display:block; width:100%; height:172px; object-fit:cover; object-position:top center; border:3px solid #fff; border-radius:14px; box-shadow:0 0 0 2px #2B2440;"></a>
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 2px 6px;">
+          <span style="font-family:'Dela Gothic One',sans-serif; background:#FF6B6B; color:#fff; font-size:12px; padding:4px 11px; border-radius:999px;">01</span>
+          <span style="font-size:12px; font-weight:800; color:#6B6480;">VTuberファンサイト</span>
+        </div>
+        <h3 style="margin:0 2px 8px; font-size:18px; font-weight:800;">四ッ谷やえ<br>公式ファンサイト</h3>
+        <p class="work-desc" style="margin:0 2px 12px; min-height:92px; font-size:13px; font-weight:500; line-height:1.75; color:#5C5670;">キャラクターの世界観を主役にした、明るくポップなファンサイト。配色とあしらいで「らしさ」を表現。</p>
+        <div class="alpha-box" style="background:#FFEDE9; border:1.5px dashed #FF6B6B; border-radius:12px; padding:11px 13px; margin:0 2px 14px; min-height:296px;">
+          <div style="font-size:10px; font-weight:800; color:#E0552B; letter-spacing:.06em; margin-bottom:5px;">＋ わたしの＋α</div>
+          <p style="margin:0 0 8px; font-size:12px; font-weight:600; line-height:1.65; color:#2B2440;"><strong style="color:#E0552B;">撫でる：</strong>やえちゃんの可愛さは、眺めるより触れて感じてほしい。タップで撫でられる仕掛けに回数カウントを添え、つい何度も手が伸びる——愛でる時間そのものを楽しめるようにしました。</p>
+          <p style="margin:0; font-size:12px; font-weight:600; line-height:1.65; color:#2B2440;"><strong style="color:#E0552B;">語録ガチャ：</strong>尖った発言や独特な言い回しは、やえちゃんの大きな魅力。心に残るひと言をランダムに引ける仕掛けにして、その“らしさ”に来た人がすぐ出会えるようにしました。</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin:0 2px 9px;">
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFEDE9; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">企画</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFF1D8; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">デザイン</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#fff; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">体験アイデア</span>
+        </div>
+        <div style="font-size:11px; font-weight:700; color:#9A93AE; margin:0 2px 14px;">実装：Claude Design（AI）</div>
+        <a href="https://mutunotatami.github.io/yotuyayae_fansite/" target="_blank" rel="noopener" class="pill-btn" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:800; color:#fff; background:#FF6B6B; padding:9px 16px; border-radius:999px; border:2px solid #2B2440; box-shadow:2px 2px 0 #2B2440; text-decoration:none;">サイトを見る →</a>
+      </div>
+
+      <!-- W2 美ヶ原みく -->
+      <div class="work-card" style="background:#fff; border:3px solid #2B2440; border-radius:24px; padding:15px; box-shadow:7px 7px 0 #2B2440;">
+        <a href="https://mutunotatami.github.io/mikaharamiku_fansite/" target="_blank" rel="noopener" class="work-thumb" style="display:block; border-radius:14px;"><img src="assets/work-mikaharamiku.jpg" alt="美ヶ原みく 公式ファンサイトの画面" style="display:block; width:100%; height:172px; object-fit:cover; object-position:top center; border:3px solid #fff; border-radius:14px; box-shadow:0 0 0 2px #2B2440;"></a>
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 2px 6px;">
+          <span style="font-family:'Dela Gothic One',sans-serif; background:#2B2440; color:#fff; font-size:12px; padding:4px 11px; border-radius:999px;">02</span>
+          <span style="font-size:12px; font-weight:800; color:#6B6480;">VTuberファンサイト</span>
+        </div>
+        <h3 style="margin:0 2px 8px; font-size:18px; font-weight:800;">美ヶ原みく<br>公式ファンサイト</h3>
+        <p class="work-desc" style="margin:0 2px 12px; min-height:92px; font-size:13px; font-weight:500; line-height:1.75; color:#5C5670;">爽やかな配色とレイアウトでキャラの魅力を整理。見せたい情報の優先順位を意識して構成。</p>
+        <div class="alpha-box" style="background:#F2F0F7; border:1.5px dashed #2B2440; border-radius:12px; padding:11px 13px; margin:0 2px 14px; min-height:296px;">
+          <div style="font-size:10px; font-weight:800; color:#2B2440; letter-spacing:.06em; margin-bottom:5px;">＋ わたしの＋α</div>
+          <p style="margin:0 0 8px; font-size:12px; font-weight:600; line-height:1.65; color:#2B2440;"><strong style="color:#1B9BD8;">漂わせる演出：</strong>マスコットの「ヌノ〜」がいかにも漂いそうだったので、試しに浮かせてみたらハマり、マウスカーソルへの追従まで足して採用。思いついたアイデアをすぐ試せるのはAIのいいところです。</p>
+          <p style="margin:0; font-size:12px; font-weight:600; line-height:1.65; color:#2B2440;"><strong style="color:#1B9BD8;">世界観づくり：</strong>立ち絵と、落ち着いた可愛い声の話し方から世界観を想像し、やさしい夕暮れの色でまとめました。情報を並べるだけでなく、見ているだけで癒される空気感を大切にしています。</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin:0 2px 9px;">
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFEDE9; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">企画</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFF1D8; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">デザイン</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#fff; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">体験アイデア</span>
+        </div>
+        <div style="font-size:11px; font-weight:700; color:#9A93AE; margin:0 2px 14px;">実装：Claude Design（AI）</div>
+        <a href="https://mutunotatami.github.io/mikaharamiku_fansite/" target="_blank" rel="noopener" class="pill-btn" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:800; color:#fff; background:#2B2440; padding:9px 16px; border-radius:999px; border:2px solid #2B2440; box-shadow:2px 2px 0 #FF6B6B; text-decoration:none;">サイトを見る →</a>
+      </div>
+
+      <!-- W3 六乃たたみ（本人） -->
+      <div class="work-card" style="background:#fff; border:3px solid #2B2440; border-radius:24px; padding:15px; box-shadow:7px 7px 0 #FFC24B;">
+        <a href="https://profile.6-tatami.com" target="_blank" rel="noopener" class="work-thumb" style="display:block; border-radius:14px;"><img src="assets/work-mutunotatami.jpg" alt="六乃たたみ 公式サイトの画面" style="display:block; width:100%; height:172px; object-fit:cover; object-position:top center; border:3px solid #fff; border-radius:14px; box-shadow:0 0 0 2px #2B2440;"></a>
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 2px 6px;">
+          <span style="font-family:'Dela Gothic One',sans-serif; background:#E0A21E; color:#fff; font-size:12px; padding:4px 11px; border-radius:999px;">03</span>
+          <span style="font-size:12px; font-weight:800; color:#6B6480;">自分の公式サイト</span>
+        </div>
+        <h3 style="margin:0 2px 8px; font-size:18px; font-weight:800;">六乃たたみ<br>公式サイト</h3>
+        <p class="work-desc" style="margin:0 2px 12px; min-height:92px; font-size:13px; font-weight:500; line-height:1.75; color:#5C5670;">VTuber・六乃たたみとしての、私自身の公式サイト。配信スケジュール・各種リンク・Storeへの導線を集めた、活動の拠点です。</p>
+        <div class="alpha-box" style="background:#FFF5DE; border:1.5px dashed #E0A21E; border-radius:12px; padding:11px 13px; margin:0 2px 14px; min-height:296px;">
+          <div style="font-size:10px; font-weight:800; color:#B07E12; letter-spacing:.06em; margin-bottom:5px;">＋ わたしの＋α</div>
+          <p style="margin:0 0 8px; font-size:12px; font-weight:600; line-height:1.65; color:#2B2440;"><strong style="color:#B07E12;">全振りの方針：</strong>VTuberの公式サイトであると同時に、私のWeb制作ポートフォリオでもあると意識。自分の売りを考え抜いた末、キャラの可愛さを伝えることに全振りしました。</p>
+          <p style="margin:0; font-size:12px; font-weight:600; line-height:1.65; color:#2B2440;"><strong style="color:#B07E12;">世界観の演出：</strong>歯車が回るロード画面やふわふわ浮くミニキャラで世界観をつくり、「配信中かチェック！」ボタンで来た人がすぐ楽しめるように。初めて作ったサイトで、全体のバランスの取り方を多く学べました。</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin:0 2px 9px;">
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFEDE9; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">企画</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFF1D8; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">デザイン</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#fff; padding:4px 11px; border-radius:999px; border:1.5px solid #2B2440;">独自ドメイン</span>
+        </div>
+        <div style="font-size:11px; font-weight:700; color:#9A93AE; margin:0 2px 14px;">実装：Claude Design（AI）</div>
+        <a href="https://profile.6-tatami.com" target="_blank" rel="noopener" class="pill-btn" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:800; color:#2B2440; background:#FFC24B; padding:9px 16px; border-radius:999px; border:2px solid #2B2440; box-shadow:2px 2px 0 #2B2440; text-decoration:none;">サイトを見る →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <div id="about" class="wrap" style="max-width:1040px; margin:0 auto; padding:48px 28px 20px;">
+    <div class="about-card" style="background:#2B2440; border-radius:28px; padding:44px 44px; color:#FFF6EF; box-shadow:8px 8px 0 rgba(43,36,64,.18);">
+      <h2 style="margin:0 0 18px; font-family:'Dela Gothic One',sans-serif; font-size:30px; color:#FFC24B;">ABOUT</h2>
+      <p style="margin:0 0 26px; font-size:16px; font-weight:500; line-height:2; text-wrap:pretty;">Illustratorでデザインをつくる楽しさに出会い、Webサイトで自分のアイデアが形になる面白さに惹かれてWEBデザイナーを志しました。<br><b style="color:#FF8A8A;">「Webサイトは情報を載せる場であり、訪れた人に体験を届ける場でもある」</b><br>——VTuberの公式サイトづくりを通して、そう実感しています。</p>
+      <div class="g-about" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+        <div style="background:rgba(255,255,255,.07); border-radius:18px; padding:24px 24px;">
+          <div style="font-family:'Dela Gothic One',sans-serif; font-size:13px; color:#FFC24B; margin-bottom:10px;">STRENGTH 01</div>
+          <div style="font-size:17px; font-weight:800; margin-bottom:10px;">考えて、形にする力</div>
+          <p style="margin:0; font-size:13.5px; font-weight:500; line-height:1.9; color:#E8E2F5;">「何をどう見せれば伝わるか」を考え、AIに的確に指示して形にする力。コードは書けなくても、撫でられる仕掛けや漂うマスコットのような体験は、すべて自分で発想しディレクションして実現しました。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.07); border-radius:18px; padding:24px 24px;">
+          <div style="font-family:'Dela Gothic One',sans-serif; font-size:13px; color:#FFC24B; margin-bottom:10px;">STRENGTH 02</div>
+          <div style="font-size:17px; font-weight:800; margin-bottom:10px;">相手の立場で考える力</div>
+          <p style="margin:0; font-size:13.5px; font-weight:500; line-height:1.9; color:#E8E2F5;">ファンサイトの制作では、本人に「どんなページが欲しいか」「載せたい言葉は何か」を丁寧に伺い、要望をもとに構成を組み立てました。相手のイメージを形にすることを大切にしています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SKILLS ===== -->
+  <div id="skills" class="wrap" style="max-width:1040px; margin:0 auto; padding:40px 28px 20px;">
+    <h2 style="margin:0 0 6px; font-family:'Dela Gothic One',sans-serif; font-size:30px; color:#2B2440; text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-2px 0 0 #fff,2px 0 0 #fff,4px 5px 0 rgba(0,0,0,.10);">SKILLS</h2>
+    <p style="margin:0 0 24px; font-size:14px; font-weight:700; color:#6B6480;">実際に手を動かして使っているツールと領域です。</p>
+
+    <div class="g-skills" style="display:grid; grid-template-columns:1fr 1fr; gap:13px;">
+      <div style="background:#fff; border:2.5px solid #2B2440; border-radius:16px; padding:16px 18px; box-shadow:4px 4px 0 #FF6B6B;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+          <span style="font-weight:800; font-size:15px; flex:1;">Webデザイン / ディレクション</span>
+          <span style="font-size:11px; font-weight:800; color:#fff; background:#FF6B6B; padding:3px 11px; border-radius:999px;">実践</span>
+        </div>
+        <p style="margin:0; font-size:12.5px; font-weight:600; color:#6B6480; line-height:1.6;">「何を・なぜ・どう見せるか」を考え、企画から体験設計・デザインまでを一貫して担当。実装はAIをディレクションして進め、VTuber公式サイト3点を形にしました。</p>
+      </div>
+      <div style="background:#fff; border:2.5px solid #2B2440; border-radius:16px; padding:16px 18px; box-shadow:4px 4px 0 #FFC24B;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+          <span style="font-weight:800; font-size:15px; flex:1;">Illustrator</span>
+          <span style="font-size:11px; font-weight:800; color:#2B2440; background:#FFC24B; padding:3px 11px; border-radius:999px;">自主制作</span>
+        </div>
+        <p style="margin:0; font-size:12.5px; font-weight:600; color:#6B6480; line-height:1.6;">自分の配信用にサムネイルを制作。視聴者の目を引くタイポグラフィを軸にデザインしています（下にギャラリーを掲載）。</p>
+      </div>
+    </div>
+
+    <!-- THUMBNAIL GALLERY -->
+    <div style="margin-top:40px;">
+      <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:6px;">
+        <h3 style="margin:0; font-family:'Dela Gothic One',sans-serif; font-size:22px; color:#2B2440; text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-2px 0 0 #fff,2px 0 0 #fff,3px 4px 0 rgba(0,0,0,.10);">THUMBNAILS</h3>
+        <span style="font-size:13px; font-weight:800; color:#FF6B6B;">Illustratorで制作した配信サムネイル（自主制作）</span>
+      </div>
+      <p style="margin:0 0 20px; font-size:13px; font-weight:600; color:#6B6480; line-height:1.7;">「どんな文字組みならキャラの魅力が伝わるか」を考え、タイポグラフィで目を引く構成を意識しています。</p>
+      <div class="g-thumbs" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+        <div style="background:#fff; border:3px solid #2B2440; border-radius:16px; padding:9px; box-shadow:5px 5px 0 #FF6B6B;">
+          <img src="assets/thumb-3.jpg" alt="配信サムネイル：六周年記念" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border:2px solid #2B2440; border-radius:10px;">
+          <p style="margin:9px 4px 2px; font-size:11px; font-weight:700; color:#6B6480;">六周年記念</p>
+        </div>
+        <div style="background:#fff; border:3px solid #2B2440; border-radius:16px; padding:9px; box-shadow:5px 5px 0 #FFC24B;">
+          <img src="assets/thumb-2.jpg" alt="配信サムネイル：ビジュアルお披露目＆お誕生日" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border:2px solid #2B2440; border-radius:10px;">
+          <p style="margin:9px 4px 2px; font-size:11px; font-weight:700; color:#6B6480;">ビジュアルお披露目＆お誕生日</p>
+        </div>
+        <div style="background:#fff; border:3px solid #2B2440; border-radius:16px; padding:9px; box-shadow:5px 5px 0 #2B2440;">
+          <img src="assets/thumb-4.jpg" alt="配信サムネイル：フリートーク" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border:2px solid #2B2440; border-radius:10px;">
+          <p style="margin:9px 4px 2px; font-size:11px; font-weight:700; color:#6B6480;">フリートーク</p>
+        </div>
+        <div style="background:#fff; border:3px solid #2B2440; border-radius:16px; padding:9px; box-shadow:5px 5px 0 #FFC24B;">
+          <img src="assets/thumb-5.jpg" alt="配信サムネイル：おみみが幸せ バイノーラル雑談" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border:2px solid #2B2440; border-radius:10px;">
+          <p style="margin:9px 4px 2px; font-size:11px; font-weight:700; color:#6B6480;">おみみが幸せ バイノーラル雑談</p>
+        </div>
+        <div style="background:#fff; border:3px solid #2B2440; border-radius:16px; padding:9px; box-shadow:5px 5px 0 #FF6B6B;">
+          <img src="assets/thumbnail-sample.jpg" alt="配信サムネイル：酔いどれ雑談" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border:2px solid #2B2440; border-radius:10px;">
+          <p style="margin:9px 4px 2px; font-size:11px; font-weight:700; color:#6B6480;">酔いどれ雑談</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CLOSING ===== -->
+  <div style="max-width:1040px; margin:0 auto; padding:64px 28px 60px; text-align:center;">
+    <div style="display:inline-block; background:#2B2440; color:#fff; font-family:'Zen Maru Gothic',sans-serif; font-weight:900; font-size:18px; padding:15px 30px; border-radius:18px; box-shadow:4px 4px 0 #FF6B6B;">ご覧いただき、ありがとうございました！</div>
+    <p style="margin:24px 0 0; font-size:13px; font-weight:700; color:#9B8FB5;">© 2026 八田実紗希 — Portfolio</p>
+  </div>
+
+</div>
+</body>
+</html>
